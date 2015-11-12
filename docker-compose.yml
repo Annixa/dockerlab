@@ -1,0 +1,7 @@
+# Example Docker Compose for Docker Lab
+
+dockerlab-lab:
+  build: dockerlab-lab
+  container_name: dockerlab-lab
+  privileged: true
+

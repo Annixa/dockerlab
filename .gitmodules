@@ -1,0 +1,4 @@
+[submodule "dockerlab-lab"]
+	path = dockerlab-lab
+	url = https://github.com/Annixa/dockerlab-lab
+	branch = master
