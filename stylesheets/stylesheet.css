@@ -8,6 +8,13 @@ by Jason Costello, @jsncostello
 /*******************************************************************************
 MeyerWeb Reset
 *******************************************************************************/
+@font-face {
+    font-family: "Apple Color Emoji";
+    src: url('../fonts/AppleColorEmoji-sbix.ttf');
+}
+.emoji{
+  font-family: "Apple Color Emoji";
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
