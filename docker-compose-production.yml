@@ -1,7 +1,51 @@
 # Example Docker Compose for Docker Lab
 
-dockerlab-lab:
-  image: annixa/dockerlab-lab
-  container_name: dockerlab-lab
+dockerlab-www:
+  image: annixa/dockerlab-www
+  container_name: dockerlab-www
   privileged: true
+  links:
+    - dockerlab-db
+  env_file: 
+    - passwords.env
 
+dockerlab-dns:
+  image: annixa/dockerlab-dns
+  container_name: dockerlab-dns
+  ports:
+    - "53:53/udp"
+  env_file:
+    - passwords.env
+
+dockerlab-db:
+  image: postgres:9.3
+  container_name: dockerlab-db
+  restart: always
+  env_file: 
+    - passwords.env
+  volumes_from:
+    - dockerlab-db-data
+
+dockerlab-db-data:
+  image: busybox
+  container_name: dockerlab-db-data
+  volumes:
+    - "/etc/postgresql"
+    - "/var/log/postgresql"
+    - "/var/lib/postgresql/data"
+
+dockerlab-vpn-data:
+  image: busybox:latest
+  container_name: dockerlab-vpn-data
+  volumes:
+    - /etc/openvpn
+
+dockerlab-vpn:
+  image: annixa/dockerlab-vpn
+  container_name: dockerlab-vpn
+  volumes_from:
+    - dockerlab-vpn-data
+  ports:
+    - "1194:1194/udp"
+  cap_add:
+    - NET_ADMIN

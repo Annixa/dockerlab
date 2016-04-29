@@ -2,3 +2,12 @@
 	path = dockerlab-lab
 	url = https://github.com/Annixa/dockerlab-lab
 	branch = master
+[submodule "dockerlab-dns"]
+	path = dockerlab-dns
+	url = https://github.com/Annixa/dockerlab-dns
+[submodule "dockerlab-vpn"]
+	path = dockerlab-vpn
+	url = https://github.com/Annixa/dockerlab-vpn.git
+[submodule "dockerlab-www"]
+	path = dockerlab-www
+	url = https://github.com/Annixa/dockerlab-www.git
