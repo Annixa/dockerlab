@@ -11,3 +11,6 @@
 [submodule "dockerlab-www"]
 	path = dockerlab-www
 	url = https://github.com/Annixa/dockerlab-www.git
+[submodule "dockerlab-ldap"]
+	path = dockerlab-ldap
+	url = https://github.com/Annixa/dockerlab-ldap.git
